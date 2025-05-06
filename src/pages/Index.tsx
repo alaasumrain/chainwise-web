@@ -1,3 +1,4 @@
+
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Command } from "lucide-react";
@@ -8,6 +9,7 @@ import { PricingSection } from "@/components/pricing/PricingSection";
 import LogoCarousel from "@/components/LogoCarousel";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import RegistrationForm from "@/components/RegistrationForm";
+import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
@@ -135,6 +137,11 @@ const Index = () => {
       {/* Testimonials Section */}
       <div className="bg-black">
         <TestimonialsSection />
+      </div>
+
+      {/* FAQ Section */}
+      <div className="bg-black">
+        <FAQSection />
       </div>
 
       {/* CTA Section */}
