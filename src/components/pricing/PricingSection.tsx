@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -38,7 +39,7 @@ const PricingTier = ({
         ))}
       </ul>
       <Button className="button-gradient w-full">
-        Start Trading
+        Start Investing
       </Button>
     </div>
   </CardSpotlight>
@@ -55,7 +56,7 @@ export const PricingSection = () => {
           className="text-5xl md:text-6xl font-normal mb-6"
         >
           Choose Your{" "}
-          <span className="text-gradient font-medium">Trading Plan</span>
+          <span className="text-gradient font-medium">Investment Plan</span>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -63,45 +64,45 @@ export const PricingSection = () => {
           transition={{ delay: 0.1, duration: 0.5 }}
           className="text-lg text-gray-400"
         >
-          Select the perfect trading plan with advanced features and competitive fees
+          Select the perfect plan with advanced AI features and competitive pricing
         </motion.p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         <PricingTier
-          name="Basic Trader"
+          name="Individual Investor"
           price="$0"
-          description="Perfect for beginners starting their crypto journey"
+          description="Perfect for beginners starting their investment journey"
           features={[
-            "Basic spot trading",
-            "Market & limit orders",
-            "Basic market analysis",
+            "Basic AI market insights",
+            "Standard portfolio tracking",
+            "Weekly market reports",
             "Email support"
           ]}
         />
         <PricingTier
-          name="Pro Trader"
-          price="$29"
-          description="Advanced features for serious traders"
+          name="Professional Investor"
+          price="$49"
+          description="Advanced features for serious investors"
           features={[
-            "Advanced trading tools",
-            "Margin trading up to 10x",
-            "Advanced technical analysis",
+            "Advanced AI-powered analytics",
+            "Custom investment strategies",
+            "Real-time market predictions",
             "Priority support",
             "API access"
           ]}
           isPopular
         />
         <PricingTier
-          name="Institutional"
+          name="Enterprise"
           price="Custom"
-          description="Enterprise-grade solutions for institutions"
+          description="Enterprise-grade solutions for organizations"
           features={[
-            "Custom trading solutions",
-            "Unlimited trading volume",
-            "OTC desk access",
-            "Dedicated account manager",
+            "Dedicated AI investment advisor",
+            "Advanced risk management",
             "Custom API integration",
+            "White-label solutions",
+            "Dedicated account manager",
             "24/7 priority support"
           ]}
         />
