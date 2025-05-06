@@ -12,8 +12,16 @@ import RegistrationForm from "@/components/RegistrationForm";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import CountdownTimer from "@/components/CountdownTimer";
+import SocialProof from "@/components/SocialProof";
+import HowItWorks from "@/components/HowItWorks";
+import FloatingCTA from "@/components/FloatingCTA";
 
 const Index = () => {
+  // Target date for countdown timer - 13 days from now
+  const targetDate = new Date();
+  targetDate.setDate(targetDate.getDate() + 13);
+  
   return (
     <div className="min-h-screen bg-black text-foreground">
       <Navigation />
@@ -45,11 +53,11 @@ const Index = () => {
         <div className="max-w-4xl relative z-10">
           <h1 className="text-5xl md:text-7xl font-normal mb-4 tracking-tight text-left">
             <span className="text-gray-200">
-              <TextGenerateEffect words="Invest smarter with" />
+              <TextGenerateEffect words="Invest Smarter. Grow Faster." />
             </span>
             <br />
             <span className="text-white font-medium">
-              <TextGenerateEffect words="AI-powered insights" />
+              <TextGenerateEffect words="Powered by AI." />
             </span>
           </h1>
           
@@ -69,13 +77,20 @@ const Index = () => {
             transition={{ delay: 0.5 }}
             className="flex flex-col sm:flex-row gap-4 items-start"
           >
-            <Button size="lg" className="button-gradient">
-              Start Investing Now
+            <Button size="lg" className="button-gradient" onClick={() => {
+              document.getElementById("register")?.scrollIntoView({ behavior: "smooth" });
+            }}>
+              Join the Waitlist
             </Button>
             <Button size="lg" variant="link" className="text-white">
-              Explore Markets <ArrowRight className="ml-2 w-4 h-4" />
+              Explore Platform <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </motion.div>
+          
+          {/* Countdown Timer */}
+          <div className="mt-12 max-w-md">
+            <CountdownTimer targetDate={targetDate} />
+          </div>
         </div>
 
         <motion.div
@@ -94,12 +109,24 @@ const Index = () => {
         </motion.div>
       </motion.section>
 
+      {/* Social Proof Section */}
+      <section className="container px-4 py-10">
+        <div className="max-w-4xl mx-auto">
+          <SocialProof />
+        </div>
+      </section>
+
       {/* Logo Carousel */}
       <LogoCarousel />
 
       {/* Features Section */}
       <div id="features" className="bg-black">
         <FeaturesSection />
+      </div>
+
+      {/* How It Works */}
+      <div id="how-it-works" className="bg-black">
+        <HowItWorks />
       </div>
 
       {/* Registration Section */}
@@ -166,7 +193,13 @@ const Index = () => {
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             Join thousands of investors who have already discovered the power of AI-driven investment strategies.
           </p>
-          <Button size="lg" className="button-gradient">
+          <Button 
+            size="lg" 
+            className="button-gradient"
+            onClick={() => {
+              document.getElementById("register")?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
             Create Account
             <ArrowRight className="ml-2 w-4 h-4" />
           </Button>
@@ -177,6 +210,9 @@ const Index = () => {
       <div className="bg-black">
         <Footer />
       </div>
+      
+      {/* Floating CTA for mobile */}
+      <FloatingCTA />
     </div>
   );
 };

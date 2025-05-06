@@ -44,9 +44,29 @@ export default function RegistrationForm() {
     setIsSubmitting(true);
     
     try {
-      // This would normally point to a serverless function that handles the Mailchimp API call
-      // For now, we'll simulate the API call with a timeout
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Mailchimp integration
+      const response = await fetch("https://api.mailchimp.com/3.0/lists/{LIST_ID}/members", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer {YOUR_API_KEY}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email_address: values.email,
+          status: "subscribed",
+          merge_fields: {
+            FNAME: values.firstName,
+            LNAME: values.lastName,
+          },
+        }),
+      });
+      
+      // NOTE: In a production environment, you should use a serverless function
+      // to handle this API call and protect your Mailchimp API key
+      
+      if (!response.ok) {
+        throw new Error("Error subscribing to newsletter");
+      }
       
       console.log("Form submitted:", values);
       
