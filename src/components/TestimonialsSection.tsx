@@ -1,45 +1,49 @@
 
 "use client";
 
+import React from "react";
 import { motion } from "framer-motion";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Card } from "./ui/card";
+
+// Default avatar placeholder for fallback
+const DEFAULT_AVATAR = "/lovable-uploads/c32c6788-5e4a-4fee-afee-604b03113c7f.png";
 
 const testimonials = [
   {
     name: "Michael Chen",
     role: "Investment Advisor",
-    image: "https://avatars.githubusercontent.com/u/1234567?v=4",
+    image: DEFAULT_AVATAR,
     content: "The AI-powered market analysis has significantly improved our investment decisions. My clients are seeing better returns with less risk thanks to ChainWise's predictive algorithms."
   },
   {
     name: "Sarah Johnson",
     role: "Wealth Management Director",
-    image: "https://avatars.githubusercontent.com/u/2345678?v=4",
+    image: DEFAULT_AVATAR,
     content: "ChainWise's enterprise tools have transformed our investment strategy. The AI-driven portfolio optimization and risk assessment features have saved us countless hours of analysis."
   },
   {
     name: "David Wilson",
     role: "Angel Investor",
-    image: "https://avatars.githubusercontent.com/u/3456789?v=4",
+    image: DEFAULT_AVATAR,
     content: "The customer support is exceptional, and the platform's intuitive design made adopting AI for my investment decisions seamless. A game-changer for both novice and experienced investors."
   },
   {
     name: "Emily Zhang",
     role: "FinTech Developer",
-    image: "https://avatars.githubusercontent.com/u/4567890?v=4",
+    image: DEFAULT_AVATAR,
     content: "We've seen remarkable improvements in our investment performance since integrating with ChainWise. The AI predictions and smart allocation suggestions are particularly impressive."
   },
   {
     name: "James Rodriguez",
     role: "Financial Security Expert",
-    image: "https://avatars.githubusercontent.com/u/5678901?v=4",
+    image: DEFAULT_AVATAR,
     content: "The security features are robust and the regular AI updates keep us ahead of market trends. It's exactly what the investment industry needed in the age of data-driven decisions."
   },
   {
     name: "Lisa Thompson",
     role: "Portfolio Manager",
-    image: "https://avatars.githubusercontent.com/u/6789012?v=4",
+    image: DEFAULT_AVATAR,
     content: "The platform's ability to handle complex investment strategies while maintaining simplicity in its interface is remarkable. The AI insights have been invaluable for our portfolio management."
   }
 ];
@@ -68,7 +72,7 @@ const TestimonialsSection = () => {
                 <Card key={`${index}-1`} className="w-[400px] shrink-0 bg-black/40 backdrop-blur-xl border-white/5 hover:border-white/10 transition-all duration-300 p-8">
                   <div className="flex items-center gap-4 mb-6">
                     <Avatar className="h-12 w-12">
-                      <AvatarImage src={testimonial.image} />
+                      <AvatarImage src={testimonial.image} alt={testimonial.name} />
                       <AvatarFallback>{testimonial.name[0]}</AvatarFallback>
                     </Avatar>
                     <div>
@@ -87,7 +91,7 @@ const TestimonialsSection = () => {
                 <Card key={`${index}-2`} className="w-[400px] shrink-0 bg-black/40 backdrop-blur-xl border-white/5 hover:border-white/10 transition-all duration-300 p-8">
                   <div className="flex items-center gap-4 mb-6">
                     <Avatar className="h-12 w-12">
-                      <AvatarImage src={testimonial.image} />
+                      <AvatarImage src={testimonial.image} alt={testimonial.name} />
                       <AvatarFallback>{testimonial.name[0]}</AvatarFallback>
                     </Avatar>
                     <div>
