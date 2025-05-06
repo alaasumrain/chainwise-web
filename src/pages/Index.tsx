@@ -7,6 +7,7 @@ import { FeaturesSection } from "@/components/features/FeaturesSection";
 import { PricingSection } from "@/components/pricing/PricingSection";
 import LogoCarousel from "@/components/LogoCarousel";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import RegistrationForm from "@/components/RegistrationForm";
 import Footer from "@/components/Footer";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
@@ -98,6 +99,33 @@ const Index = () => {
       <div id="features" className="bg-black">
         <FeaturesSection />
       </div>
+
+      {/* Registration Section */}
+      <section id="register" className="container px-4 py-24 bg-black">
+        <div className="max-w-2xl mx-auto text-center mb-12">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-5xl md:text-6xl font-normal mb-6"
+          >
+            Join Our{" "}
+            <span className="text-gradient font-medium">Early Access</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.5 }}
+            className="text-lg text-gray-400"
+          >
+            Be among the first to experience the future of AI-powered investing
+          </motion.p>
+        </div>
+        
+        <div className="max-w-md mx-auto">
+          <RegistrationForm />
+        </div>
+      </section>
 
       {/* Pricing Section */}
       <div id="pricing" className="bg-black">

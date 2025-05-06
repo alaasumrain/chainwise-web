@@ -52,6 +52,11 @@ const Footer = () => {
                     Market Analysis
                   </a>
                 </li>
+                <li>
+                  <a href="#register" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    Register for Early Access
+                  </a>
+                </li>
               </ul>
             </div>
 
@@ -69,7 +74,7 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <a href="https://docs.lovable.dev/user-guides/custom-domains" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                     Custom Domain Setup
                   </a>
                 </li>

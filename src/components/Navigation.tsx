@@ -44,6 +44,7 @@ const Navigation = () => {
     { name: "Features", href: "#features", onClick: () => scrollToSection('features') },
     { name: "Pricing", href: "#pricing", onClick: () => scrollToSection('pricing') },
     { name: "Testimonials", href: "#testimonials", onClick: () => scrollToSection('testimonials') },
+    { name: "Register", href: "#register", onClick: () => scrollToSection('register') },
   ];
 
   return (
@@ -79,11 +80,11 @@ const Navigation = () => {
               </a>
             ))}
             <Button 
-              onClick={() => scrollToSection('cta')}
+              onClick={() => scrollToSection('register')}
               size="sm"
               className="button-gradient"
             >
-              Start Investing
+              Early Access
             </Button>
           </div>
 
@@ -116,11 +117,11 @@ const Navigation = () => {
                   <Button 
                     onClick={() => {
                       setIsMobileMenuOpen(false);
-                      scrollToSection('cta');
+                      scrollToSection('register');
                     }}
                     className="button-gradient mt-4"
                   >
-                    Start Investing
+                    Early Access
                   </Button>
                 </div>
               </SheetContent>
