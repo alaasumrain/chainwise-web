@@ -38,59 +38,70 @@ const Index = () => {
           className="absolute inset-0 -z-10 bg-[#0A0A0A]"
         />
         
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          className="inline-block mb-4 px-4 py-1.5 rounded-full glass"
-        >
-          <span className="text-sm font-medium">
-            <Command className="w-4 h-4 inline-block mr-2" />
-            AI-Powered Investment Platform
-          </span>
-        </motion.div>
-        
-        <div className="max-w-4xl relative z-10">
-          <h1 className="text-5xl md:text-7xl font-normal mb-4 tracking-tight text-left">
-            <span className="text-gray-200">
-              <TextGenerateEffect words="Invest Smarter. Grow Faster." />
-            </span>
-            <br />
-            <span className="text-white font-medium">
-              <TextGenerateEffect words="Powered by AI." />
-            </span>
-          </h1>
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+          <div className="md:w-3/5">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="inline-block mb-4 px-4 py-1.5 rounded-full glass"
+            >
+              <span className="text-sm font-medium">
+                <Command className="w-4 h-4 inline-block mr-2" />
+                AI-Powered Investment Platform
+              </span>
+            </motion.div>
+            
+            <div className="max-w-4xl relative z-10">
+              <h1 className="text-5xl md:text-7xl font-normal mb-4 tracking-tight text-left">
+                <span className="text-gray-200">
+                  <TextGenerateEffect words="Invest Smarter. Grow Faster." />
+                </span>
+                <br />
+                <span className="text-white font-medium">
+                  <TextGenerateEffect words="Powered by AI." />
+                </span>
+              </h1>
+              
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl text-left"
+              >
+                ChainWise combines cutting-edge AI with traditional investment strategies to help you make data-driven decisions and maximize returns.{" "}
+                <span className="text-white">Start your investment journey today.</span>
+              </motion.p>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+                className="flex flex-col sm:flex-row gap-4 items-start"
+              >
+                <Button size="lg" className="button-gradient" onClick={() => {
+                  document.getElementById("register")?.scrollIntoView({ behavior: "smooth" });
+                }}>
+                  Join the Waitlist
+                </Button>
+                <Button size="lg" variant="link" className="text-white">
+                  Explore Platform <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </motion.div>
+            </div>
+          </div>
           
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl text-left"
-          >
-            ChainWise combines cutting-edge AI with traditional investment strategies to help you make data-driven decisions and maximize returns.{" "}
-            <span className="text-white">Start your investment journey today.</span>
-          </motion.p>
-          
+          {/* Countdown Timer moved to the right side */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="flex flex-col sm:flex-row gap-4 items-start"
+            transition={{ delay: 0.6 }}
+            className="md:w-2/5 flex justify-center md:justify-end"
           >
-            <Button size="lg" className="button-gradient" onClick={() => {
-              document.getElementById("register")?.scrollIntoView({ behavior: "smooth" });
-            }}>
-              Join the Waitlist
-            </Button>
-            <Button size="lg" variant="link" className="text-white">
-              Explore Platform <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
+            <div className="w-full max-w-sm">
+              <CountdownTimer targetDate={targetDate} />
+            </div>
           </motion.div>
-          
-          {/* Countdown Timer */}
-          <div className="mt-12 max-w-md">
-            <CountdownTimer targetDate={targetDate} />
-          </div>
         </div>
 
         <motion.div
